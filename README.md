@@ -45,6 +45,20 @@ No external libraries required. Uses standard Python modules.
 
 ---
 
+## Project Structure
+
+```
+.
+├── aus_map-colour.py
+├── telangana_map-colour.py
+├── sudoku.py
+├── crypt-arithmetic.py
+├── README.md
+└── LICENSE
+```
+
+---
+
 ## How to Run
 
 1. Clone the repository
@@ -52,10 +66,10 @@ No external libraries required. Uses standard Python modules.
 3. Run the required file:
 
 ```bash
-python map_coloring.py
-python telangana_coloring.py
-python sudoku_solver.py
-python cryptarithmetic.py
+python aus_map-colour.py
+python telangana_map-colour.py
+python sudoku.py
+python crypt-arithmetic.py
 ```
 
 ---
