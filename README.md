@@ -2,13 +2,13 @@
 
 ## Problem Statement
 
-Implement and solve different problems using the Constraint Satisfaction Problem (CSP) framework. Each problem is modeled using variables, domains, and constraints, and solved using standard CSP techniques.
+Implement Constraint Satisfaction Problem (CSP) techniques to solve different types of problems such as map coloring, Sudoku, and cryptarithmetic. The goal is to model each problem using variables, domains, and constraints, and compute valid solutions.
 
 ---
 
 ## Approach
 
-* Problems are modeled as CSPs with:
+* Each problem is modeled using:
 
   * Variables
   * Domains
@@ -19,63 +19,16 @@ Implement and solve different problems using the Constraint Satisfaction Problem
 
   * Minimum Remaining Values (MRV)
   * Forward Checking
-
----
-
-## Problems Implemented
-
-### 1. Map Coloring (Australia)
-
-* Regions are treated as variables
-* Colors are the domain
-* Adjacent regions must have different colors
-* Uses AC-3 and backtracking
-
----
-
-### 2. Telangana District Map Coloring
-
-* 33 districts modeled as variables
-* Real-world adjacency used
-* Uses 4 colors
-* Demonstrates scalability of CSP
-
----
-
-### 3. Sudoku Solver
-
-* 81 variables (cells in a 9×9 grid)
-* Domain: digits 1–9
-* Constraints:
-
-  * All rows, columns, and 3×3 boxes must satisfy Alldiff
-* Uses AC-3 for preprocessing
-* Backtracking with MRV and forward checking
-
----
-
-### 4. Cryptarithmetic (TWO + TWO = FOUR)
-
-* Letters represent unique digits
-* Includes carry variables
-* Constraints applied column-wise
-* Uses backtracking with constraint checking
-
----
-
-## Techniques Used
-
-* Backtracking Search (DFS-based)
-* Constraint Propagation (AC-3 Algorithm)
-* Minimum Remaining Values (MRV)
-* Forward Checking
+* Problems are solved using a combination of inference and search
 
 ---
 
 ## User Input
 
-* Sudoku solver allows custom puzzle input
-* Other problems run with predefined data
+The programs support:
+
+* Predefined problem instances (map coloring, cryptarithmetic)
+* Custom input for Sudoku puzzles
 
 ---
 
@@ -88,7 +41,7 @@ Implement and solve different problems using the Constraint Satisfaction Problem
 
 ## Requirements
 
-No external libraries required. Uses standard Python libraries.
+No external libraries required. Uses standard Python modules.
 
 ---
 
@@ -96,7 +49,7 @@ No external libraries required. Uses standard Python libraries.
 
 1. Clone the repository
 2. Navigate to the folder
-3. Run any file:
+3. Run the required file:
 
 ```bash
 python map_coloring.py
@@ -110,36 +63,66 @@ python cryptarithmetic.py
 ## Sample Output
 
 Map Coloring:
-
-```
-WA    → Red
-NT    → Green
-SA    → Blue
-...
-```
+WA → Red
+NT → Green
+SA → Blue
 
 Sudoku:
-
-```
 Solved Grid:
 5 3 4 | 6 7 8 | 9 1 2
 ...
-```
 
 ---
 
 ## Features
 
-* Implements core CSP techniques from AIMA
+* Implements CSP framework from AIMA
+* Uses AC-3 for constraint propagation
+* Applies MRV and forward checking
 * Works for both small and large problems
-* Uses heuristics for efficiency
-* Clear and modular implementation
+* Supports real-world and standard CSP examples
 
 ---
 
 ## Conclusion
 
-This assignment demonstrates how CSP techniques can be applied to different types of problems, ranging from simple map coloring to complex problems like Sudoku and cryptarithmetic. Constraint propagation and heuristics significantly reduce the search space and improve performance.
+This assignment demonstrates how different problems can be solved using CSP techniques. By combining constraint propagation with backtracking and heuristics, the search space is significantly reduced, making it possible to efficiently solve complex problems like Sudoku and cryptarithmetic.
+
+---
+
+## Q2: Sudoku as a CSP
+
+* Modeled as 81 variables (cells)
+* Domain: values 1 to 9
+* Constraints:
+
+  * Each row must have distinct values
+  * Each column must have distinct values
+  * Each 3×3 box must have distinct values
+* Uses Alldiff constraint
+* AC-3 reduces domains before search
+* Backtracking completes the solution
+
+---
+
+## Q3: Cryptarithmetic Problem (TWO + TWO = FOUR)
+
+* Each letter represents a unique digit
+* Includes carry variables (C1, C2, C3)
+* Constraints are applied column-wise
+* Leading digits cannot be zero
+* Alldiff constraint ensures unique assignments
+* Backtracking is used to explore valid assignments
+
+---
+
+## Q4: Map Coloring
+
+* Regions/districts are modeled as variables
+* Colors are the domain
+* Adjacent regions must have different colors
+* Constraint graph represents adjacency
+* AC-3 and backtracking are used to find solutions
 
 ---
 
